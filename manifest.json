@@ -1,0 +1,20 @@
+{
+  "appID": "ac873dd09bd146659d4afcdadf895507",
+  "dependencies": {
+    "devkit-billing": "https://github.com/gameclosure/billing#v3.2.0",
+    "devkit-core": "https://github.com/gameclosure/devkit-core#v2.3.3",
+    "devkit-facebook": "https://github.com/gameclosure/facebook#v2.0.0",
+    "devkit-google-analytics": "https://github.com/gameclosure/googleanalytics#devkit2",
+    "devkit-localnotify": "https://github.com/gameclosure/localnotify#v2.1.0"
+  },
+  "shortName": "dinder",
+  "studio": {
+    "domain": "dinder.com",
+    "name": "Dinder",
+    "stagingDomain": "dinder.com"
+  },
+  "supportedOrientations": [
+    "portrait"
+  ],
+  "title": "dinder"
+}
