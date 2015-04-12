@@ -18,11 +18,12 @@
 			supr(this, 'init', [merge(opts, {
 				width:           device.width,
 				height:          device.height,
-				backgroundColor: '#FFBE40'
+				backgroundColor: '#AAAAAA'
 			})]);
 			// The logo
 			this.logo = new TextView({
 				superview: this,
+				fontFamily: 'DroidSans',
 				text: "Dinder!",
 				color: "white",
 				x: 0,
@@ -34,6 +35,7 @@
 			// The back button
 			this.back = new TextView({
 				superview: this,
+				fontFamily: 'DroidSans',
 				text: "<",
 				color: "white",
 				x:      (gx*-2),
@@ -41,17 +43,22 @@
 				width:  (gx*2),
 				height: (gx*2)
 			});
-
 			this.on('InputStart', bind(this, this.collapse));
 		};
 		this.collapse = function(){
 			animate(this).now({ height: (gx*2) }, 600, animate.easeInOut);
 			animate(this.logo).now({ y: 0, scale: 0.5 }, 600, animate.easeInOutBack);
-			animate(this.back).wait(200).then({ x: 0 }, 400, animate.easeOutBack);
 		};
 		this.expand = function(){
 			animate(this).now({ height: device.height }, 600, animate.easeInOut);
 			animate(this.logo).now({ y: (gx*4), scale: 1 }, 600, animate.easeInOutBack);
+		};
+		this.setBackButton = function(callback){
+			animate(this.back).wait(200).then({ x: 0 }, 400, animate.easeOutBack);
+			this.back.removeAllListeners('InputStart');
+			this.back.on('InputStart', callback);
+		};
+		this.hideBackButton = function(){
 			animate(this.back).now({ x: (gx*-2) }, 400, animate.easeInBack);
 		};
 	});

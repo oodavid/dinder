@@ -16,5 +16,8 @@
   "supportedOrientations": [
     "portrait"
   ],
+  "ttf": [
+    "resources/fonts/DroidSans.ttf"
+  ],
   "title": "dinder"
 }
